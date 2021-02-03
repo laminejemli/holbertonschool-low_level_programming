@@ -1,8 +1,9 @@
 #include <stdio.h>
 /**
-*main = display the phrase with proper grammar , but the outcome is a piece of art,
+* main - main bloc
+* Return : 0
 */
-int main (void)
+int main(void)
 {
 printf("with proper grammar, but the outcome is a piece of art,\n");
 return (0);
