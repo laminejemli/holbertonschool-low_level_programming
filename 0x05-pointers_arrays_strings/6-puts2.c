@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
 * puts2 - print every other character
 * flowed by a new line
