@@ -1,17 +1,21 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
-* puts2 - print every other character
-* flowed by a new line
-* @str: the string to be printe
-*/
+ * puts2 - prints one char out of 2 of a string
+ * followed by a new line
+ * @str: string to print the chars from
+ */
 void puts2(char *str)
 {
-int i;
+	int len, i;
 
-for (i = 0; str[i] != '\0'; i = i + 2)
-{
-_putchar(str[i]);
-}
-_putchar('\n');
+	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	for (i = 0; i < len; i += 2)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
 }
