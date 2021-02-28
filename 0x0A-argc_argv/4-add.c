@@ -1,35 +1,33 @@
-#include <ctype.h>
-#include <stdlib.h>
+#include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
-* main - print name program
-*@argc:integer
-*@argv:string
-* Return:0
+* main - add  numbers.
+* @argc: number of arguments.
+* @argv: arguments.
+* Return: Always 0.
 */
+
 int main(int argc, char *argv[])
 {
-int i, j, Sum;
+int i, add = 0;
+char *endptr;
 
-Sum = 0;
 if (argc == 1)
 printf("0\n");
-if (argc > 1)
+else
 {
-for (i = 1; i < argc; i++)
-{
-for (j = 0; argv[i][j] != '\0'; j++)
+for (i = 1; argv[i] != NULL; i++)
 }
-
-if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
+add += strtol(argv[i], &endptr, 10);
+if (*endptr != '\0')
 {
 printf("Error\n");
 return (1);
 }
 }
-Sum = Sum + atoi(argv[i]);
-}
-printf("%d\n", Sum);
+printf("%d\n", add);
 }
 return (0);
 }
