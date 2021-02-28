@@ -19,14 +19,15 @@ printf("0\n");
 else
 {
 for (i = 1; argv[i] != NULL; i++)
-}
-add += strtol(argv[i], &endptr, 10);
-if (*endptr != '\0')
 {
+															add += strtol(argv[i], &endptr, 10);
+if (*endptr != '\0')
+}
 printf("Error\n");
 return (1);
 }
 }
+
 printf("%d\n", add);
 }
 return (0);
