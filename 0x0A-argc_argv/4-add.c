@@ -20,9 +20,10 @@ else
 {
 for (i = 1; argv[i] != NULL; i++)
 {
-															add += strtol(argv[i], &endptr, 10);
+add += strtol(argv[i], &endptr, 10);
+
 if (*endptr != '\0')
-}
+{
 printf("Error\n");
 return (1);
 }
