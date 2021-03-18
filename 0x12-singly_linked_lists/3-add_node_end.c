@@ -1,39 +1,56 @@
 #include "lists.h"
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
+/**
+ * _strlen - length of a string
+ * @s: string
+ * Return: length of string
+ */
+int _strlen(const char *s)
+{
+	int i = 0;
+
+	while (*(s + i) != '\0')
+	{
+		i++;
+	}
+
+	return (i);
+}
 
 /**
- * add_node_end - create a new node at the end of list
- * @head: pointer to the first element of node
- * @str: string to be duplicated
- * Return: adress of the new node, NULL if it fails
-*/
+ * add_node_end - adds a new node
+ * @head: double pointer
+ * @str: string to add
+ * Return: pointer to the new node
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
-    list_t *new;
-    list_t *tmp = *head;
-    unsigned int len = 0;
+	list_t *n, *tmp;
 
-    while(str[len])
-        len++;
+	n = malloc(sizeof(list_t));
+	if (n != NULL)
+	{
+		n->str = strdup(str);
+		n->len = _strlen(str);
+		n->next = NULL;
+	} else
+	{
+		return (NULL);
+	}
 
-        new = mallo(sizeof(list_t));
+	if (*head == NULL)
+	{
+		*head = n;
+		return (*head);
+	}
 
-        if (!new)
-        return (NULL);
+	tmp = *head;
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = n;
 
-        new->str = strdup(str);
-        new->len = len;
-        new->next = NULL;
-
-        if (*head)
-        {
-            *head = new;
-            return (new);
-            }
-            while (tmp->next)
-            tmp = tmp->next;
-
-            tmp->next = new;
-            return (new);
-            }
+	return (n);
+}
