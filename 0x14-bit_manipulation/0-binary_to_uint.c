@@ -2,10 +2,10 @@
 #include <string.h>
 
 /**
- * binary_to_uint - convert binary to unsigned int
- * @b: pointer to char
- * Return: the converted number
- */
+* binary_to_uint - convert binary to unsigned int
+* @b: pointer to char
+* Return: the converted number
+*/
 unsigned int binary_to_uint(const char *b)
 {
 unsigned int base = 0;
