@@ -28,4 +28,3 @@ base *= 2;
 }
 return (i);
 }
-
