@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - adds a new node
+ * add_dnodeint - adds a new node at the begin
  * @head: double pointer
  * @n: data to insert
  * Return: the new element, or NULL if it failed
